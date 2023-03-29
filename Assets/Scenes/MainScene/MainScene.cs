@@ -16,5 +16,7 @@ public class MainScene : MonoBehaviour
     void Update()
     {
         view.roleHeath = 100;
+
+        view.popNum = 100000;
     }
 }

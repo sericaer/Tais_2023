@@ -6,5 +6,7 @@ namespace Tais.Views
         public int rolePrestige;
         public int roleHeath;
         public int rolePress;
+
+        public int popNum;
     }
 }
