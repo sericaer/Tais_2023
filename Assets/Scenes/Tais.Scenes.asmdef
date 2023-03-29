@@ -1,0 +1,17 @@
+{
+    "name": "Tais.Scenes",
+    "rootNamespace": "Tais.Scenes",
+    "references": [
+        "Aya.DataBinding",
+        "Tais.UIViews"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
