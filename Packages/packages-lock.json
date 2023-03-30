@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.ls9512.ubind": {
-      "version": "https://gh.api.99988866.xyz/https://github.com/sericaer/UBind.git",
+      "version": "https://github.com/sericaer/UBind.git#ButtonBinder",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d16fb5cecd3d43f297f564e286046baaf8669bd7"
+      "hash": "707396398f73bfa572e3dcfd5a547687781a5c82"
     },
     "com.unity.2d.animation": {
       "version": "8.0.2",

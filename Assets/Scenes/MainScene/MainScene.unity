@@ -959,6 +959,7 @@ GameObject:
   - component: {fileID: 265312656}
   - component: {fileID: 265312658}
   - component: {fileID: 265312657}
+  - component: {fileID: 265312659}
   m_Layer: 5
   m_Name: RoleName
   m_TagString: Untagged
@@ -1028,6 +1029,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265312655}
   m_CullTransparentMesh: 1
+--- !u!114 &265312659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265312655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97095e7019af5c24698845b959cdb3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: Default
+  Key: roleName
+  Direction: 1
+  UpdateType: 0
+  Target: {fileID: 265312657}
 --- !u!1 &287212054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,6 +2274,7 @@ GameObject:
   - component: {fileID: 645574115}
   - component: {fileID: 645574114}
   - component: {fileID: 645574116}
+  - component: {fileID: 645574117}
   m_Layer: 5
   m_Name: PrestageValue
   m_TagString: Untagged
@@ -2345,6 +2364,23 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &645574117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645574112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97095e7019af5c24698845b959cdb3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: Default
+  Key: rolePrestage
+  Direction: 1
+  UpdateType: 0
+  Target: {fileID: 645574114}
 --- !u!1 &689979472
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,6 +4269,7 @@ GameObject:
   - component: {fileID: 1354960314}
   - component: {fileID: 1354960313}
   - component: {fileID: 1354960312}
+  - component: {fileID: 1354960315}
   m_Layer: 5
   m_Name: PressValue
   m_TagString: Untagged
@@ -4322,6 +4359,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354960310}
   m_CullTransparentMesh: 1
+--- !u!114 &1354960315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354960310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97095e7019af5c24698845b959cdb3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: Default
+  Key: rolePress
+  Direction: 1
+  UpdateType: 0
+  Target: {fileID: 1354960313}
 --- !u!1 &1375213154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4334,6 +4388,7 @@ GameObject:
   - component: {fileID: 1375213158}
   - component: {fileID: 1375213157}
   - component: {fileID: 1375213156}
+  - component: {fileID: 1375213159}
   m_Layer: 5
   m_Name: Role
   m_TagString: Untagged
@@ -4427,6 +4482,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375213154}
   m_CullTransparentMesh: 1
+--- !u!114 &1375213159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375213154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a050cefc94374c044879ab24ffd7d2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: Default
+  Key: cmdShowPlayer
+  Direction: 1
+  UpdateType: 0
+  Target: {fileID: 1570330477}
 --- !u!1 &1410510458
 GameObject:
   m_ObjectHideFlags: 0
@@ -6375,6 +6447,7 @@ GameObject:
   - component: {fileID: 1979932425}
   - component: {fileID: 1979932424}
   - component: {fileID: 1979932423}
+  - component: {fileID: 1979932426}
   m_Layer: 5
   m_Name: HeathValue
   m_TagString: Untagged
@@ -6464,6 +6537,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979932421}
   m_CullTransparentMesh: 1
+--- !u!114 &1979932426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979932421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97095e7019af5c24698845b959cdb3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: Default
+  Key: roleHeath
+  Direction: 1
+  UpdateType: 0
+  Target: {fileID: 1979932424}
 --- !u!1 &1998900945
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,6 +6688,7 @@ GameObject:
   - component: {fileID: 2106184404}
   - component: {fileID: 2106184403}
   - component: {fileID: 2106184402}
+  - component: {fileID: 2106184405}
   m_Layer: 5
   m_Name: PopCount
   m_TagString: Untagged
@@ -6687,6 +6778,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106184400}
   m_CullTransparentMesh: 1
+--- !u!114 &2106184405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106184400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97095e7019af5c24698845b959cdb3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: Default
+  Key: popNum
+  Direction: 1
+  UpdateType: 0
+  Target: {fileID: 2106184403}
 --- !u!1 &2124999335
 GameObject:
   m_ObjectHideFlags: 0
@@ -6699,7 +6807,6 @@ GameObject:
   - component: {fileID: 2124999338}
   - component: {fileID: 2124999337}
   - component: {fileID: 2124999336}
-  - component: {fileID: 2124999340}
   - component: {fileID: 2124999341}
   m_Layer: 5
   m_Name: Canvas
@@ -6795,39 +6902,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2124999340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124999335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51de3718b79a0744ca6cf58442638eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Context: Default
-  Key: MainDataContext
-  Direction: 1
-  Assembly: Tais.UIViews
-  Type: Tais.Views.MainSceneView
-  Map:
-  - Property: roleName
-    Target: {fileID: 265312657}
-    TargetProperty: text
-  - Property: rolePrestige
-    Target: {fileID: 645574114}
-    TargetProperty: text
-  - Property: roleHeath
-    Target: {fileID: 1979932424}
-    TargetProperty: text
-  - Property: rolePress
-    Target: {fileID: 1354960313}
-    TargetProperty: text
-  - Property: popNum
-    Target: {fileID: 2106184403}
-    TargetProperty: text
 --- !u!114 &2124999341
 MonoBehaviour:
   m_ObjectHideFlags: 0

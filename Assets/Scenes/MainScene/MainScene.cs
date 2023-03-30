@@ -9,7 +9,7 @@ public class MainScene : MonoBehaviour
     void Awake()
     {
         view = new MainSceneView();
-        UBind.BindSource("MainDataContext", view);
+        BindMap.Bind(view);
     }
 
     // Update is called once per frame

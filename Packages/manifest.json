@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.ls9512.ubind": "https://gh.api.99988866.xyz/https://github.com/sericaer/UBind.git",
+    "com.ls9512.ubind": "https://github.com/sericaer/UBind.git#ButtonBinder",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.14",
