@@ -3,6 +3,7 @@
     "rootNamespace": "Tais.Scenes",
     "references": [
         "Aya.DataBinding",
+        "Aya.Events",
         "Tais.UIViews"
     ],
     "includePlatforms": [],

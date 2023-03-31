@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.ls9512.ubind": "https://github.com/sericaer/UBind.git#ButtonBinder",
+    "com.ls9512.uevent": "https://github.com/sericaer/UEvent.git",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.14",

@@ -1,5 +1,7 @@
 using Aya.DataBinding;
+using Aya.Events;
 using System;
+using Tais.UIViews.Messages;
 using UnityEngine;
 
 namespace Tais.Views
@@ -24,7 +26,7 @@ namespace Tais.Views
         [BindValueSource("cmdShowPlayer")]
         public ICommand ShowPlayer = new Command()
         {
-            funcExecute = () => { Debug.Log("ShowPlayer"); }
+            funcExecute = () => { UEvent.Dispatch(new MESSAGE_SHOW_PERSON_DETAIL()); }
         };
     }
 
@@ -42,5 +44,12 @@ namespace Tais.Views
         {
             funcExecute?.Invoke();
         }
+    }
+
+    [EventEnum]
+    public enum GameEventType
+    {
+        GameStart,
+        GameFinish,
     }
 }

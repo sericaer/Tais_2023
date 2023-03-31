@@ -2,7 +2,8 @@
     "name": "Tais.UIViews",
     "rootNamespace": "Tais.UIViews",
     "references": [
-        "Aya.DataBinding"
+        "Aya.DataBinding",
+        "Aya.Events"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

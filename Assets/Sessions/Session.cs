@@ -9,3 +9,8 @@ class Province
 {
     public int popCount;
 }
+
+public class Person
+{
+    public string name;
+}
