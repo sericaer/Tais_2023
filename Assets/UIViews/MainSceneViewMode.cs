@@ -9,9 +9,10 @@ using Tais.UIViews.Messages;
 
 namespace Tais.Views
 {
-    [AddINotifyPropertyChangedInterface]
-    public class MainSceneViewMode
+    public class MainSceneViewMode : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string roleName { get; private set; }
 
         public int rolePrestige { get; private set; }

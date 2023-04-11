@@ -8,9 +8,10 @@ using System.ComponentModel;
 
 namespace Tais.Views
 {
-    [AddINotifyPropertyChangedInterface]
-    public class MapDetailViewMode
+    public class MapDetailViewMode : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public ObservableCollection<INotifyPropertyChanged> provinceViewModes { get; }
 
         private ObservableCollection<Province> provinces;
@@ -24,7 +25,7 @@ namespace Tais.Views
 
             foreach (var province in provinces)
             {
-                provinceViewModes.Add(new ProvinceViewMode(province as Province) as INotifyPropertyChanged);
+                provinceViewModes.Add(new ProvinceViewMode(province));
             }
         }
 
@@ -35,7 +36,7 @@ namespace Tais.Views
                 case NotifyCollectionChangedAction.Add:
                     foreach(var province in e.NewItems)
                     {
-                        provinceViewModes.Add(new ProvinceViewMode(province as Province) as INotifyPropertyChanged);
+                        provinceViewModes.Add(new ProvinceViewMode(province as Province));
                     }
                     break;
                 case NotifyCollectionChangedAction.Remove:
@@ -51,9 +52,10 @@ namespace Tais.Views
         }
     }
 
-    [AddINotifyPropertyChangedInterface]
-    public class ProvinceViewMode
+    public class ProvinceViewMode : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string name { get; set; }
         public int popCount { get; set; }
 

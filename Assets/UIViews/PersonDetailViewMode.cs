@@ -4,9 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace Tais.Views
 {
-    [AddINotifyPropertyChangedInterface]
-    public class PersonDetailViewMode
+    public class PersonDetailViewMode : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string roleName { get; private set; }
 
         public int rolePrestige { get; private set; }
