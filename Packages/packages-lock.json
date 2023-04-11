@@ -12,7 +12,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "553f9835f454d9a42604a854c9a91b5c8a14a4ae"
+      "hash": "39cf600c39e2e36ece22f269722d2c754721e95f"
     },
     "com.unity.2d.animation": {
       "version": "8.0.2",
@@ -231,6 +231,22 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.cn"
+    },
+    "com.vovgou.loxodon-framework-fody": {
+      "version": "2.5.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.vovgou.loxodon-framework-fody-propertychanged": {
+      "version": "2.5.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.vovgou.loxodon-framework-fody": "2.4.9"
+      },
+      "url": "https://package.openupm.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

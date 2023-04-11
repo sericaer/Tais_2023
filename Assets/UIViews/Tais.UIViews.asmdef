@@ -3,7 +3,8 @@
     "rootNamespace": "Tais.UIViews",
     "references": [
         "Sericaer.UIBind",
-        "Aya.Events"
+        "Aya.Events",
+        "com.vovgou.loxodon-framework-fody-propertychanged"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

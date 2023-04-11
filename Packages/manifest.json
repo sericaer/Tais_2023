@@ -42,6 +42,18 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
-  }
+    "com.unity.modules.xr": "1.0.0",
+    "com.vovgou.loxodon-framework-fody": "2.5.6",
+    "com.vovgou.loxodon-framework-fody-propertychanged": "2.5.6"
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.vovgou",
+        "com.openupm"
+      ]
+    }
+  ]
 }

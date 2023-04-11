@@ -19,7 +19,7 @@ public class MainScene : MonoListener
         base.Awake();
 
         view = new MainSceneViewMode();
-        mainContext.SetContextData(view);
+        mainContext.SetContextData(view as INotifyPropertyChanged);
     }
 
     // Update is called once per frame
