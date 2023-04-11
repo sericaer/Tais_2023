@@ -2,29 +2,32 @@
 using Aya.Events;
 using Tais.UIViews.Messages;
 using Tais.Views;
+using Sericaer.UIBind.Runtime;
 using UnityEngine;
 
 public class MainScene : MonoListener
 {
-    MainSceneView view;
+    MainSceneViewMode view;
 
     public PersonDetailPanel personDetail;
+
+    public BindContext mainContext;
 
     // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
 
-        view = new MainSceneView();
-        //BindMap.Bind(view);
+        view = new MainSceneViewMode();
+        mainContext.SetContextData(view);
     }
 
     // Update is called once per frame
     void Update()
     {
-        view.roleHeath = 100;
+        //view.roleHeath = 100;
 
-        view.popNum = 100000;
+        view.popNum++;
     }
 
 

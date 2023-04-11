@@ -2,7 +2,7 @@
     "name": "Tais.Scenes",
     "rootNamespace": "Tais.Scenes",
     "references": [
-        "Aya.DataBinding",
+        "Sericaer.UIBind",
         "Aya.Events",
         "Tais.UIViews"
     ],
