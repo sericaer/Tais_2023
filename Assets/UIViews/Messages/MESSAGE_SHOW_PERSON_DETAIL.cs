@@ -13,7 +13,7 @@ namespace Tais.UIViews.Messages
 
         public MESSAGE_SHOW_PERSON_DETAIL()
         {
-            context = new PersonDetailView();
+            context = new PersonDetailViewMode();
         }
     }
 }

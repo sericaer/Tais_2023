@@ -4,14 +4,14 @@ using Tais.UIViews.Messages;
 using Tais.Views;
 using Sericaer.UIBind.Runtime;
 using UnityEngine;
+using System.ComponentModel;
 
 public class MainScene : MonoListener
 {
     MainSceneViewMode view;
 
-    public PersonDetailPanel personDetail;
-
     public BindContext mainContext;
+    public BindContext personDetailContext;
 
     // Start is called before the first frame update
     protected override void Awake()
@@ -34,7 +34,7 @@ public class MainScene : MonoListener
     [Listen(typeof(MESSAGE_SHOW_PERSON_DETAIL))]
     public void TestMethod(MESSAGE_SHOW_PERSON_DETAIL msg)
     {
-        personDetail.SetContext(msg.context);
-        personDetail.gameObject.SetActive(true);
+        personDetailContext.gameObject.SetActive(true);
+        personDetailContext.SetContextData(msg.context as INotifyPropertyChanged);
     }
 }

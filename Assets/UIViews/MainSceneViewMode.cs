@@ -1,6 +1,9 @@
 using Aya.Events;
+using Sericaer.UIBind.Runtime;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Tais.UIViews.Messages;
 
 namespace Tais.Views
 {
@@ -43,28 +46,25 @@ namespace Tais.Views
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        //[BindValueSource("cmdShowPlayer")]
-        //public ICommand ShowPlayer = new Command()
-        //{
-        //    funcExecute = () => { UEvent.Dispatch(new MESSAGE_SHOW_PERSON_DETAIL()); }
-        //};
+        public ICommand ShowPlayer { get; } = new Command()
+        {
+            execAction = () => { UEvent.Dispatch(new MESSAGE_SHOW_PERSON_DETAIL()); }
+        };
     }
 
-    //public class Command : ICommand
-    //{
-    //    public Func<bool> funcCanExecute;
-    //    public Action funcExecute;
+    public class Command : ICommand
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
 
-    //    public bool CanExecute()
-    //    {
-    //        return funcCanExecute == null ? true : funcCanExecute.Invoke();
-    //    }
+        public Action execAction;
 
-    //    public void Execute()
-    //    {
-    //        funcExecute?.Invoke();
-    //    }
-    //}
+        public bool isEnable => true;
+
+        public void Exec()
+        {
+            execAction?.Invoke();
+        }
+    }
 
     [EventEnum]
     public enum GameEventType
