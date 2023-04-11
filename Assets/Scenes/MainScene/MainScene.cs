@@ -25,9 +25,7 @@ public class MainScene : MonoListener
     // Update is called once per frame
     void Update()
     {
-        //view.roleHeath = 100;
-
-        view.popNum++;
+        view.Update();
     }
 
 

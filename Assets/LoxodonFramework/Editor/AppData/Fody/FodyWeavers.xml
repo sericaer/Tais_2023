@@ -3,6 +3,7 @@
 	<AssemblyNames>
 		<Item>Tais.UIViews</Item>
     <Item>Tais.Scenes</Item>
+    <Item>Tais.Sessions</Item>
 	</AssemblyNames>
 	<PropertyChanged defaultWeaving ="true" />
 </Weavers>
