@@ -1,4 +1,4 @@
-using Aya.DataBinding;
+//using Aya.DataBinding;
 using Aya.Events;
 using System;
 using Tais.UIViews.Messages;
@@ -8,43 +8,43 @@ namespace Tais.Views
 {
     public class MainSceneView
     {
-        [BindValueSource("roleName")]
+        //[BindValueSource("roleName")]
         public string roleName;
 
-        [BindValueSource("rolePrestige")]
+        //[BindValueSource("rolePrestige")]
         public int rolePrestige;
 
-        [BindValueSource("roleHeath")]
+        //[BindValueSource("roleHeath")]
         public int roleHeath;
 
-        [BindValueSource("rolePress")]
+        //[BindValueSource("rolePress")]
         public int rolePress;
 
-        [BindValueSource("popNum")]
+        //[BindValueSource("popNum")]
         public int popNum;
 
-        [BindValueSource("cmdShowPlayer")]
-        public ICommand ShowPlayer = new Command()
-        {
-            funcExecute = () => { UEvent.Dispatch(new MESSAGE_SHOW_PERSON_DETAIL()); }
-        };
+        //[BindValueSource("cmdShowPlayer")]
+        //public ICommand ShowPlayer = new Command()
+        //{
+        //    funcExecute = () => { UEvent.Dispatch(new MESSAGE_SHOW_PERSON_DETAIL()); }
+        //};
     }
 
-    public class Command : ICommand
-    {
-        public Func<bool> funcCanExecute;
-        public Action funcExecute;
+    //public class Command : ICommand
+    //{
+    //    public Func<bool> funcCanExecute;
+    //    public Action funcExecute;
 
-        public bool CanExecute()
-        {
-            return funcCanExecute == null ? true : funcCanExecute.Invoke();
-        }
+    //    public bool CanExecute()
+    //    {
+    //        return funcCanExecute == null ? true : funcCanExecute.Invoke();
+    //    }
 
-        public void Execute()
-        {
-            funcExecute?.Invoke();
-        }
-    }
+    //    public void Execute()
+    //    {
+    //        funcExecute?.Invoke();
+    //    }
+    //}
 
     [EventEnum]
     public enum GameEventType

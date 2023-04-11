@@ -1,18 +1,18 @@
 {
   "dependencies": {
-    "com.ls9512.ubind": {
-      "version": "https://github.com/sericaer/UBind.git#ButtonBinder",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "707396398f73bfa572e3dcfd5a547687781a5c82"
-    },
     "com.ls9512.uevent": {
       "version": "https://github.com/sericaer/UEvent.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
       "hash": "bc3e0bd9103ce5b5a060f35cd790f1f843fb2ad5"
+    },
+    "com.sericaer.uibind": {
+      "version": "https://github.com/sericaer/UIBind.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "586cb206525e1e468e144bd26f6522b87f6f9a13"
     },
     "com.unity.2d.animation": {
       "version": "8.0.2",

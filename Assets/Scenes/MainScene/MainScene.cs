@@ -1,4 +1,4 @@
-using Aya.DataBinding;
+//using Aya.DataBinding;
 using Aya.Events;
 using Tais.UIViews.Messages;
 using Tais.Views;
@@ -16,7 +16,7 @@ public class MainScene : MonoListener
         base.Awake();
 
         view = new MainSceneView();
-        BindMap.Bind(view);
+        //BindMap.Bind(view);
     }
 
     // Update is called once per frame

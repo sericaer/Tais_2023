@@ -1,4 +1,4 @@
-﻿using Aya.DataBinding;
+﻿//using Aya.DataBinding;
 using Aya.Events;
 using System;
 using Tais.Views;
@@ -17,7 +17,7 @@ public class PersonDetailPanel : MonoBehaviour
     {
         if(view != null)
         {
-            BindMap.Bind(view);
+            //BindMap.Bind(view);
         }
     }
 
@@ -25,7 +25,7 @@ public class PersonDetailPanel : MonoBehaviour
     {
         if (view != null)
         {
-            BindMap.UnBind(view);
+            //BindMap.UnBind(view);
         }
     }
 }
