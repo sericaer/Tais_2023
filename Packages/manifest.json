@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.ls9512.uevent": "https://github.com/sericaer/UEvent.git",
-    "com.sericaer.uibind": "https://github.com/sericaer/UIBind.git",
+    "com.sericaer.uibind": "git@github.com:sericaer/UIBind.git",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.14",
@@ -12,6 +12,8 @@
     "com.unity.timeline": "1.7.1",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.7.8",
+    "com.vovgou.loxodon-framework-fody": "2.5.6",
+    "com.vovgou.loxodon-framework-fody-propertychanged": "2.5.6",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -42,9 +44,7 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.vovgou.loxodon-framework-fody": "2.5.6",
-    "com.vovgou.loxodon-framework-fody-propertychanged": "2.5.6"
+    "com.unity.modules.xr": "1.0.0"
   },
   "scopedRegistries": [
     {

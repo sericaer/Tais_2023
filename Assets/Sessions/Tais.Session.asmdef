@@ -1,7 +1,9 @@
 {
     "name": "Tais.Sessions",
     "rootNamespace": "Tais.Sessions",
-    "references": [],
+    "references": [
+        "com.vovgou.loxodon-framework-fody-propertychanged"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

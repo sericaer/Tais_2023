@@ -4,6 +4,7 @@ using Sericaer.UIBind.Runtime;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Tais.Sessions;
 using Tais.UIViews.Messages;
 
 namespace Tais.Views
@@ -25,6 +26,20 @@ namespace Tais.Views
         {
             execAction = () => { UEvent.Dispatch(new MESSAGE_SHOW_PERSON_DETAIL()); }
         };
+
+        public ICommand CommandShowMap { get; } 
+
+        private Session session;
+
+        public MainSceneViewMode()
+        {
+            session = new Session();
+
+            CommandShowMap = new Command()
+            {
+                execAction = () => { UEvent.Dispatch(new MESSAGE_SHOW_MAP_DETAIL(session.provinces)); }
+            };
+        }
     }
 
     public class Command : ICommand

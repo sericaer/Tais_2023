@@ -8,11 +8,11 @@
       "hash": "bc3e0bd9103ce5b5a060f35cd790f1f843fb2ad5"
     },
     "com.sericaer.uibind": {
-      "version": "https://github.com/sericaer/UIBind.git",
+      "version": "git@github.com:sericaer/UIBind.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "39cf600c39e2e36ece22f269722d2c754721e95f"
+      "hash": "d0fe3997ee66bc664064d8c5c7365c53160a7ef6"
     },
     "com.unity.2d.animation": {
       "version": "8.0.2",
