@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using Tais.Sessions;
 using Tais.Views;
 
@@ -23,7 +18,7 @@ namespace Tais.UIViews.Messages
     {
         public readonly object context;
 
-        public MESSAGE_SHOW_MAP_DETAIL(ObservableCollection<Province> provinces)
+        public MESSAGE_SHOW_MAP_DETAIL(BindingList<Province> provinces)
         {
             context = new MapDetailViewMode(provinces);
         }

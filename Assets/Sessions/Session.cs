@@ -1,24 +1,25 @@
-using PropertyChanged;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Tais.Sessions
 {
     public class Session
     {
-        public ObservableCollection<Province> provinces;
+        public BindingList<Province> provinces;
 
         public Session()
         {
-            provinces = new ObservableCollection<Province>();
+            provinces = new BindingList<Province>();
 
             provinces.Add(new Province("P01", 1000));
             provinces.Add(new Province("P02", 2000));
         }
     }
 
-    [AddINotifyPropertyChangedInterface]
-    public class Province
+    public class Province : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string name { get; private set; }
         public int popCount { get; set; }
 
