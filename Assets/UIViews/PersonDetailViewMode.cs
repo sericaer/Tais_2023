@@ -1,10 +1,11 @@
 ﻿using PropertyChanged;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Tais.Views
 {
-    public class PersonDetailViewMode : INotifyPropertyChanged
+    public class PersonDetailViewMode : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -19,6 +20,11 @@ namespace Tais.Views
         public PersonDetailViewMode()
         {
             rolePrestige = 12;
+        }
+
+        public void Dispose()
+        {
+
         }
     }
 }

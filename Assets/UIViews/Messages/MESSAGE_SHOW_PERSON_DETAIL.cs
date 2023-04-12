@@ -16,11 +16,11 @@ namespace Tais.UIViews.Messages
 
     public class MESSAGE_SHOW_MAP_DETAIL
     {
-        public readonly object context;
+        public readonly object model;
 
         public MESSAGE_SHOW_MAP_DETAIL(BindingList<Province> provinces)
         {
-            context = new MapDetailViewMode(provinces);
+            this.model = provinces;
         }
     }
 }

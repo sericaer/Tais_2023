@@ -32,14 +32,24 @@ public class MainScene : MonoListener
     [Listen(typeof(MESSAGE_SHOW_PERSON_DETAIL))]
     public void OnShowPersonDetail(MESSAGE_SHOW_PERSON_DETAIL msg)
     {
-        personDetailContext.gameObject.SetActive(true);
-        personDetailContext.SetContextData(msg.context as INotifyPropertyChanged);
+        var detailPanel = Instantiate(personDetailContext, mapDetailContext.transform.parent);
+        detailPanel.gameObject.SetActive(true);
+
+        var view = new PersonDetailViewMode();
+        detailPanel.SetContextData(view);
+
+        detailPanel.OnDestroyEvent.AddListener(() => view.Dispose());
     }
 
     [Listen(typeof(MESSAGE_SHOW_MAP_DETAIL))]
     public void OnShowMapDetail(MESSAGE_SHOW_MAP_DETAIL msg)
     {
-        mapDetailContext.gameObject.SetActive(true);
-        mapDetailContext.SetContextData(msg.context as INotifyPropertyChanged);
+        var detailPanel = Instantiate(mapDetailContext, mapDetailContext.transform.parent);
+        detailPanel.gameObject.SetActive(true);
+
+        var view = new MapDetailViewModel(msg.model);
+        detailPanel.SetContextData(view);
+
+        detailPanel.OnDestroyEvent.AddListener(() => view.Dispose());
     }
 }
