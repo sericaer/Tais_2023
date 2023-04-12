@@ -1,5 +1,4 @@
 using Aya.Events;
-using PropertyChanged;
 using Sericaer.UIBind.Runtime;
 using System;
 using System.ComponentModel;

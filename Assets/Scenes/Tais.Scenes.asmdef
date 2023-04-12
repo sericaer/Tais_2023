@@ -4,7 +4,8 @@
     "references": [
         "Sericaer.UIBind",
         "Aya.Events",
-        "Tais.UIViews"
+        "Tais.UIViews",
+        "Loxodon.Framework"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

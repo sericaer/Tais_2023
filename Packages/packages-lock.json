@@ -232,21 +232,12 @@
       },
       "url": "https://packages.unity.cn"
     },
-    "com.vovgou.loxodon-framework-fody": {
-      "version": "2.5.6",
+    "com.vovgou.loxodon-framework": {
+      "version": "https://github.com/vovgou/loxodon-framework.git?path=Loxodon.Framework/Assets/LoxodonFramework",
       "depth": 0,
-      "source": "registry",
+      "source": "git",
       "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
-    "com.vovgou.loxodon-framework-fody-propertychanged": {
-      "version": "2.5.6",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.vovgou.loxodon-framework-fody": "2.4.9"
-      },
-      "url": "https://package.openupm.com"
+      "hash": "ee25bf8cee8998f4a37a9f807bb66e8bc30b07e5"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
