@@ -31,28 +31,29 @@ namespace Tais.Scenes
         {
             public event PropertyChangedEventHandler PropertyChanged;
 
-            private int id;
+            //private int id;
 
-            public int ID
-            {
-                get { return this.id; }
-                set { 
+            //public int ID
+            //{
+            //    get { return this.id; }
+            //    set { 
 
-                    if(value == id)
-                    {
-                        return;
-                    }
+            //        if(value == id)
+            //        {
+            //            return;
+            //        }
 
-                    id = value;
-                    NotifyPropertyChanged();
-                }
-            }
+            //        id = value;
+            //        NotifyPropertyChanged();
+            //    }
+            //}
 
-            private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
+            //private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+            //{
+            //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            //}
 
+            public int ID { get; set; }
         }
 
         public Text description;
