@@ -1,15 +1,16 @@
+using DynamicData;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace Tais.Sessions
+namespace Tais.Models
 {
     public class Session
     {
-        public BindingList<Province> provinces;
+        public SourceList<Province> provinces;
 
         public Session()
         {
-            provinces = new BindingList<Province>();
+            provinces = new SourceList<Province>();
 
             provinces.Add(new Province("P01", 1000));
             provinces.Add(new Province("P02", 2000));

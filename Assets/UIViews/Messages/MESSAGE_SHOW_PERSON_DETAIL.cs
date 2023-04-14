@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using Tais.Sessions;
+using Tais.Models;
 using Tais.Views;
 
 namespace Tais.UIViews.Messages

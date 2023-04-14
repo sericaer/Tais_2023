@@ -1,55 +1,28 @@
-//using Aya.DataBinding;
-using Aya.Events;
-using Tais.UIViews.Messages;
-using Tais.Views;
-using Sericaer.UIBind.Runtime;
+﻿using Tais.Models;
 using UnityEngine;
-using System.ComponentModel;
 
-public class MainScene : MonoListener
+namespace Tais.Scenes
 {
-    MainSceneViewMode view;
-
-    public BindContext mainContext;
-
-    public BindContext personDetailContext;
-    public BindContext mapDetailContext;
-
-
-    void Start()
+    class MainScene : MonoBehaviour
     {
-        view = new MainSceneViewMode();
-        mainContext.SetContextData(view as INotifyPropertyChanged);
-    }
+        public MainView mainView;
 
-    // Update is called once per frame
-    void Update()
-    {
-        view.Update();
-    }
+        private Session session;
 
+        void Start()
+        {
+            session = new Session();
 
-    [Listen(typeof(MESSAGE_SHOW_PERSON_DETAIL))]
-    public void OnShowPersonDetail(MESSAGE_SHOW_PERSON_DETAIL msg)
-    {
-        var detailPanel = Instantiate(personDetailContext, mapDetailContext.transform.parent);
-        detailPanel.gameObject.SetActive(true);
+            mainView.viewModel = new MainViewModel(session);
+        }
 
-        var view = new PersonDetailViewMode();
-        detailPanel.SetContextData(view);
+        void Update()
+        {
+            foreach (var prov in session.provinces.Items)
+            {
+                prov.popCount++;
+            }
+        }
 
-        detailPanel.OnDestroyEvent.AddListener(() => view.Dispose());
-    }
-
-    [Listen(typeof(MESSAGE_SHOW_MAP_DETAIL))]
-    public void OnShowMapDetail(MESSAGE_SHOW_MAP_DETAIL msg)
-    {
-        var detailPanel = Instantiate(mapDetailContext, mapDetailContext.transform.parent);
-        detailPanel.gameObject.SetActive(true);
-
-        var view = new MapDetailViewModel(msg.model);
-        detailPanel.SetContextData(view);
-
-        detailPanel.OnDestroyEvent.AddListener(() => view.Dispose());
     }
 }

@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Weavers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<AssemblyNames>
-		<Item>Tais.UIViews</Item>
-    <Item>Tais.Scenes</Item>
-    <Item>Tais.Sessions</Item>
+    <Item>Tais.ViewModels</Item>
+    <Item>Tais.Models</Item>
 	</AssemblyNames>
 	<PropertyChanged defaultWeaving ="true" />
 </Weavers>

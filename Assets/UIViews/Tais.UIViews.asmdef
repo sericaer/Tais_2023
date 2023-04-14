@@ -4,7 +4,7 @@
     "references": [
         "Sericaer.UIBind",
         "Aya.Events",
-        "Tais.Sessions",
+        "Tais.Models",
         "com.vovgou.loxodon-framework-fody-propertychanged"
     ],
     "includePlatforms": [],

@@ -1,8 +1,10 @@
 {
-    "name": "Tais.Models",
-    "rootNamespace": "Tais.Models",
+    "name": "Tais.ViewModels",
+    "rootNamespace": "Tais.ViewModels",
     "references": [
-        "com.vovgou.loxodon-framework-fody-propertychanged"
+        "Tais.Models",
+        "Tais.ViewModels.Interfaces",
+        "Loxodon.Framework"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -12,5 +14,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

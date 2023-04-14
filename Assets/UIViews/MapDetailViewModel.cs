@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using Tais.Sessions;
-using System.Linq;
-using System.ComponentModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
+using Tais.Models;
 
 namespace Tais.Views
 {

@@ -2,10 +2,13 @@
     "name": "Tais.Scenes",
     "rootNamespace": "Tais.Scenes",
     "references": [
-        "Sericaer.UIBind",
-        "Aya.Events",
-        "Tais.UIViews",
-        "Loxodon.Framework"
+        "Tais.Models",
+        "Tais.ViewModels",
+        "Tais.ViewModels.Interfaces",
+        "Tais.Views",
+        "Loxodon.Framework",
+        "System.Reactive",
+        "DynamicData"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

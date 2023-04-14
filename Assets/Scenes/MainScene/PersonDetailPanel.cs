@@ -1,7 +1,4 @@
-﻿//using Aya.DataBinding;
-using Aya.Events;
-using System;
-using Tais.Views;
+﻿using System;
 using UnityEngine;
 
 public class PersonDetailPanel : MonoBehaviour
