@@ -1,4 +1,6 @@
-﻿using Tais.Models;
+﻿using Loxodon.Framework.Binding;
+using Loxodon.Framework.Contexts;
+using Tais.Models;
 using UnityEngine;
 
 namespace Tais.Scenes
@@ -8,6 +10,13 @@ namespace Tais.Scenes
         public MainView mainView;
 
         private Session session;
+
+        private void Awake()
+        {
+            var context = Context.GetApplicationContext();
+            var bindingService = new BindingServiceBundle(context.GetContainer());
+            bindingService.Start();
+        }
 
         void Start()
         {

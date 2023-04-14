@@ -29,6 +29,8 @@ namespace Tais.Scenes
             var dialogU = variables.Get(msg.dialogName);
             var dialog = Instantiate(dialogU as ViewBase, dialogContainer);
             dialog.viewModel = msg.viewModel;
+
+            dialog.gameObject.SetActive(true);
         }
     }
 }

@@ -50,13 +50,6 @@ namespace Tais.Scenes
         private CompositeDisposable disposables { get; } = new CompositeDisposable();
         protected IMessenger messenger { get; } = Messenger.Default;
 
-        protected override void Awake()
-        {
-            var context = Context.GetApplicationContext();
-            var bindingService = new BindingServiceBundle(context.GetContainer());
-            bindingService.Start();
-        }
-
         protected void SubscribeMessage<T>(Action<T> processer)
         {
             disposables.Add(messenger.Subscribe<T>(processer));
