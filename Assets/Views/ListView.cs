@@ -46,6 +46,11 @@ namespace Tais.Views
 
         private ReadOnlyObservableCollection<TItemViewModel> _itemViewModels;
 
+        private void Start()
+        {
+            itemViewTemplate.gameObject.SetActive(false);
+        }
+
         void OnDestroy()
         {
             if(_itemViewModels != null)
@@ -63,6 +68,7 @@ namespace Tais.Views
                     {
                         var itemView = Instantiate(itemViewTemplate, itemViewTemplate.transform.parent);
                         itemView.viewModel = item as TItemViewModel;
+                        itemView.gameObject.SetActive(true);
                     }
                     break;
                 case NotifyCollectionChangedAction.Remove:

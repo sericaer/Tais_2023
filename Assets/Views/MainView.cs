@@ -1,11 +1,8 @@
 //using Aya.DataBinding;
 using Loxodon.Framework.Binding;
-using Loxodon.Framework.Interactivity;
-using Loxodon.Framework.ViewModels;
-using UnityEngine.UI;
-using UnityEngine;
 using Tais.ViewModels.Interfaces;
-using Loxodon.Framework.Views.Variables;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Tais.Views
 {

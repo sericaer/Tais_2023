@@ -5,6 +5,7 @@ namespace Tais.ViewModels.Interfaces
 {
     public interface IProvinceItemViewModel : IViewModel, INotifyPropertyChanged
     {
-
+        string name { get; }
+        int popCount { get; }
     }
 }

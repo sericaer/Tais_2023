@@ -2033,7 +2033,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variables:
-    variables: []
+    variables:
+    - name: name
+      objectValue: {fileID: 876576781}
+      dataValue: 
+      variableType: 2
+    - name: popCount
+      objectValue: {fileID: 151510820}
+      dataValue: 
+      variableType: 2
 --- !u!225 &538841264
 CanvasGroup:
   m_ObjectHideFlags: 0
