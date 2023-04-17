@@ -7,7 +7,7 @@ using UnityEngine;
 using Tais.ViewModels.Interfaces;
 using Loxodon.Framework.Views.Variables;
 
-namespace Tais.Scenes
+namespace Tais.Views
 {
     public class MainView : UIView<IMainViewModel>
     {

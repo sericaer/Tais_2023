@@ -1,19 +1,16 @@
 ﻿//using Aya.DataBinding;
+using System.ComponentModel;
 using Tais.ViewModels.Interfaces;
 
-namespace Tais.Scenes
+namespace Tais.Views
 {
-    public class MapDetailDialogView : UIView<IMapDetailDialogView>
+    public class MapDetailDialogView : UIView<IMapDetailDialogViewModel>
     {
+        public ProvinceItemListView provList;
+
         protected override void Start()
         {
-            //var bindingSet = this.CreateBindingSet<MainView, IMainViewModel>();
-            //bindingSet.Bind(variables.Get<Text>("roleName")).For(v => v.text).To(vm => vm.roleName).OneWay();
-            //bindingSet.Bind(variables.Get<Text>("popCount")).For(v => v.text).To(vm => vm.totalPopCount).OneWay();
-            //bindingSet.Bind(variables.Get<Button>("showMapDetail")).For(v => v.onClick).To(vm => vm.OpenMapDetailDialog);
-            //bindingSet.Build();
-
-            //SubscribeMessage<MESSAGE_SHOW_DIALOG>(OnMessageShowDialog);
+            provList.itemViewModels = ((IMapDetailDialogViewModel)viewModel).provinceList;
         }
     }
 }

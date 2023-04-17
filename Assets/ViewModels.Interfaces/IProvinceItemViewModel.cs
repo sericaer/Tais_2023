@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Tais.ViewModels.Interfaces
 {
-    public interface IMapDetailDialogView : IViewModel, INotifyPropertyChanged
+    public interface IProvinceItemViewModel : IViewModel, INotifyPropertyChanged
     {
 
     }

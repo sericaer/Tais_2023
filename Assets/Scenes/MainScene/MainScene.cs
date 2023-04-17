@@ -1,6 +1,7 @@
 ﻿using Loxodon.Framework.Binding;
 using Loxodon.Framework.Contexts;
 using Tais.Models;
+using Tais.Views;
 using UnityEngine;
 
 namespace Tais.Scenes
@@ -32,6 +33,5 @@ namespace Tais.Scenes
                 prov.popCount++;
             }
         }
-
     }
 }

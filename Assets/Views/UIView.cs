@@ -8,7 +8,7 @@ using Loxodon.Framework.Views.Variables;
 using System;
 using System.Reactive.Disposables;
 
-namespace Tais.Scenes
+namespace Tais.Views
 {
     public abstract class ViewBase : UIView
     {

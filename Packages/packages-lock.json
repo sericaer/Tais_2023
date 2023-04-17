@@ -1,19 +1,5 @@
 {
   "dependencies": {
-    "com.ls9512.uevent": {
-      "version": "https://github.com/sericaer/UEvent.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "bc3e0bd9103ce5b5a060f35cd790f1f843fb2ad5"
-    },
-    "com.sericaer.uibind": {
-      "version": "git@github.com:sericaer/UIBind.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "07850b5c46cff4b35fa3f58badcc4d9d658f5091"
-    },
     "com.unity.2d.animation": {
       "version": "8.0.2",
       "depth": 1,

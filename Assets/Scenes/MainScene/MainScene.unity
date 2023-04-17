@@ -1580,6 +1580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variables:
     variables: []
+  provList: {fileID: 1581800798}
 --- !u!225 &442681031
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1924,6 +1925,8 @@ GameObject:
   - component: {fileID: 538841260}
   - component: {fileID: 538841259}
   - component: {fileID: 538841262}
+  - component: {fileID: 538841264}
+  - component: {fileID: 538841263}
   m_Layer: 5
   m_Name: ProvinceItem
   m_TagString: Untagged
@@ -2017,6 +2020,32 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &538841263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538841257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53367a0b59ab494fbbb71d66c3f729e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variables:
+    variables: []
+--- !u!225 &538841264
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538841257}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &605311595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,7 +2176,7 @@ MonoBehaviour:
       dataValue: 
       variableType: 2
     - name: mapDetailDialog
-      objectValue: {fileID: 442681026}
+      objectValue: {fileID: 442681030}
       dataValue: 
       variableType: 2
   dialogContainer: {fileID: 868095249}
@@ -6094,6 +6123,7 @@ GameObject:
   - component: {fileID: 1581800796}
   - component: {fileID: 1581800795}
   - component: {fileID: 1581800797}
+  - component: {fileID: 1581800798}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -6185,6 +6215,19 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1581800798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581800793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e1b3d4e9f71cb4f97b512707a79887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemViewTemplate: {fileID: 538841263}
 --- !u!1 &1597382761
 GameObject:
   m_ObjectHideFlags: 0

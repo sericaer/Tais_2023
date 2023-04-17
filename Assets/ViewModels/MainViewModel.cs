@@ -3,6 +3,7 @@ using Loxodon.Framework.Commands;
 using Loxodon.Framework.ViewModels;
 using System;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Tais.Models;
 using Tais.ViewModels.Interfaces;
@@ -19,24 +20,27 @@ namespace Tais.Scenes
 
         public readonly Session model;
 
+        private CompositeDisposable disposables;
+
         public MainViewModel(Session model) : base(Loxodon.Framework.Messaging.Messenger.Default)
         {
             this.model = model;
+            this.disposables = new CompositeDisposable();
 
-            model.provinces.Connect().OnItemRemoved(_ => { }).Subscribe(prov =>
+            disposables.Add(model.provinces.Connect().OnItemRemoved(_ => { }).Subscribe(prov =>
             {
                 UpdateTotalPopCount();
-            });
+            }));
 
-            model.provinces.Connect().OnItemAdded(_ => { }).Subscribe(prov =>
+            disposables.Add(model.provinces.Connect().OnItemAdded(_ => { }).Subscribe(prov =>
             {
                 UpdateTotalPopCount();
-            });
+            }));
 
-            model.provinces.Connect().WhenPropertyChanged(x => x.popCount).Subscribe(_ =>
+            disposables.Add(model.provinces.Connect().WhenPropertyChanged(x => x.popCount).Subscribe(_ =>
             {
                 UpdateTotalPopCount();
-            });
+            }));
 
             OpenMapDetailDialog = new SimpleCommand(() =>
             {
@@ -50,10 +54,8 @@ namespace Tais.Scenes
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-
-            }
+            base.Dispose(disposing);
+            disposables.Dispose();
         }
 
 
