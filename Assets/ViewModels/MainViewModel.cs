@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using Tais.Extensions;
 using Tais.Models;
 using Tais.ViewModels.Interfaces;
 
@@ -27,20 +28,7 @@ namespace Tais.Scenes
             this.model = model;
             this.disposables = new CompositeDisposable();
 
-            disposables.Add(model.provinces.Connect().OnItemRemoved(_ => { }).Subscribe(prov =>
-            {
-                UpdateTotalPopCount();
-            }));
-
-            disposables.Add(model.provinces.Connect().OnItemAdded(_ => { }).Subscribe(prov =>
-            {
-                UpdateTotalPopCount();
-            }));
-
-            disposables.Add(model.provinces.Connect().WhenPropertyChanged(x => x.popCount).Subscribe(_ =>
-            {
-                UpdateTotalPopCount();
-            }));
+            disposables.Add(model.provinces.AsObservableList().Sum(x => x.popCount).Subscribe(sum => totalPopCount = sum));
 
             OpenMapDetailDialog = new SimpleCommand(() =>
             {

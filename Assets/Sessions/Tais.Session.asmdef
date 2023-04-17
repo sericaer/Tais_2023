@@ -2,7 +2,8 @@
     "name": "Tais.Models",
     "rootNamespace": "Tais.Models",
     "references": [
-        "com.vovgou.loxodon-framework-fody-propertychanged"
+        "com.vovgou.loxodon-framework-fody-propertychanged",
+        "Tais.Extensions"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

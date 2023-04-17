@@ -1,11 +1,7 @@
 {
-    "name": "Tais.ViewModels",
-    "rootNamespace": "Tais.ViewModels",
+    "name": "Tais.Extensions",
+    "rootNamespace": "Tais.Extensions",
     "references": [
-        "Tais.Models",
-        "Tais.ViewModels.Interfaces",
-        "Tais.Extensions",
-        "Loxodon.Framework"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -15,5 +11,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": true
+    "noEngineReferences": false
 }
