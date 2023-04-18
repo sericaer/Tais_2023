@@ -13,6 +13,7 @@ namespace Tais.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string name { get; }
+
         public decimal count { get; }
 
         public Pop(PopInit init)

@@ -1,4 +1,5 @@
 ﻿using DynamicData;
+using DynamicData.Binding;
 using Loxodon.Framework.Commands;
 using Loxodon.Framework.ViewModels;
 using System;
@@ -19,6 +20,12 @@ namespace Tais.Scenes
 
         public SimpleCommand OpenMapDetailDialog { get; }
 
+        public string year { get; private set; }
+
+        public string month { get; private set; }
+
+        public string day { get; private set; }
+
         public readonly Session model;
 
         private CompositeDisposable disposables;
@@ -28,7 +35,11 @@ namespace Tais.Scenes
             this.model = model;
             this.disposables = new CompositeDisposable();
 
-            disposables.Add(model.provinces.AsObservableList().Sum(x => x.popCount).Subscribe(sum => totalPopCount = sum));
+            disposables.Add(model.provinces.Sum(x => x.popCount).Subscribe(sum => totalPopCount = sum));
+
+            disposables.Add(model.date.WhenPropertyChanged(x => x.year).Subscribe(y => year = y.Value.ToString("00")));
+            disposables.Add(model.date.WhenPropertyChanged(x => x.month).Subscribe(m => month = m.Value.ToString("00")));
+            disposables.Add(model.date.WhenPropertyChanged(x => x.day).Subscribe(d => day = d.Value.ToString("00")));
 
             OpenMapDetailDialog = new SimpleCommand(() =>
             {

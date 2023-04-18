@@ -5,10 +5,12 @@ namespace Tais.Models
 {
     public class Session
     {
+        public Date date;
         public SourceList<Province> provinces;
 
         public Session()
         {
+            date = new Date();
             provinces = new SourceList<Province>();
 
             provinces.Add(new Province(new ProvinceInit() 

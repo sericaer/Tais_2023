@@ -10,6 +10,10 @@ namespace Tais.ViewModels.Interfaces
 
         int totalPopCount { get;}
 
+        string year { get; }
+        string month { get; }
+        string day { get; }
+
         SimpleCommand OpenMapDetailDialog { get; }
     }
 }
