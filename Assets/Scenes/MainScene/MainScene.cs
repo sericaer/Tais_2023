@@ -12,7 +12,13 @@ namespace Tais.Scenes
 
         private Session session;
 
-        private void Awake()
+
+        public void OnTimeInc()
+        {
+            session.date.day++;
+        }
+
+        void Awake()
         {
             var context = Context.GetApplicationContext();
             var bindingService = new BindingServiceBundle(context.GetContainer());

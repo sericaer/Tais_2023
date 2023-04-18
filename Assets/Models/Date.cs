@@ -41,7 +41,7 @@ namespace Tais.Models
             {
                 return _day;
             }
-            private set
+            set
             {
                 if (_day == value)
                 {
@@ -57,39 +57,39 @@ namespace Tais.Models
             }
         }
 
-        public int hour
-        {
-            get
-            {
-                return _hour;
-            }
-            internal set
-            {
-                if (_hour == value)
-                {
-                    return;
-                }
+        //public int hour
+        //{
+        //    get
+        //    {
+        //        return _hour;
+        //    }
+        //    internal set
+        //    {
+        //        if (_hour == value)
+        //        {
+        //            return;
+        //        }
 
-                _hour = value;
-                if (_hour > 24)
-                {
-                    day += 1;
-                    _hour = 0;
-                }
-            }
-        }
+        //        _hour = value;
+        //        if (_hour > 24)
+        //        {
+        //            day += 1;
+        //            _hour = 0;
+        //        }
+        //    }
+        //}
 
         private int _year;
         private int _month;
         private int _day;
-        private int _hour;
+        //private int _hour;
 
         public Date()
         {
             year = 1;
             month = 1;
             day = 1;
-            hour = 7;
+            //hour = 7;
         }
     }
 }
