@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Tais.Extensions;
 
@@ -14,7 +13,7 @@ namespace Tais.Models
         public PopInit[] popInits { get; set; }
     }
 
-    public class Province : INotifyPropertyChanged, IDisposable
+    public class Province : Entity, INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -23,23 +22,16 @@ namespace Tais.Models
 
         public SourceList<Pop> pops { get; }
 
-        private CompositeDisposable disposables;
 
         public Province(ProvinceInit provinceInit)
         {
             this.name = provinceInit.name;
             this.pops = new SourceList<Pop>();
 
-            this.disposables = new CompositeDisposable();
-            disposables.Add(pops.AsObservableList().Sum(x => x.count).Subscribe(sum => popCount = (int)sum));
+            pops.Sum(x => x.count).Subscribe(sum => popCount = (int)sum).AddTo(disposables);
 
             pops.AddRange(provinceInit.popInits.Select(init => new Pop(init)));
 
-        }
-
-        public void Dispose()
-        {
-            disposables.Dispose();
         }
     }
 }

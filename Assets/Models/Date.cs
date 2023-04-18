@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel;
+using Tais.Models.Messages;
 
 namespace Tais.Models
 {
-    public class Date : INotifyPropertyChanged
+    public class Date : Entity, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -49,11 +50,15 @@ namespace Tais.Models
                 }
 
                 _day = value;
+
                 if (_day > 30)
                 {
                     month += 1;
                     _day = 1;
                 }
+
+
+                messenger.Publish(new MESSAG_DAY_INC(year, month, day));
             }
         }
 

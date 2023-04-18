@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 
 namespace Tais.Extensions
@@ -27,6 +28,11 @@ namespace Tais.Extensions
             return Observable.Merge(
                 source.Connect().WhenPropertyChanged(propertyAccessor).Select(_ => source.Items.Sum(func)),
                 source.Connect().OnItemRemoved(_ => { }).Select(_ => source.Items.Sum(func)));
+        }
+
+        public static void AddTo(this IDisposable disposable, CompositeDisposable disposables)
+        {
+            disposables.Add(disposable);
         }
     }
 }

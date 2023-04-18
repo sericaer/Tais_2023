@@ -3,6 +3,7 @@
     "rootNamespace": "Tais.Models",
     "references": [
         "com.vovgou.loxodon-framework-fody-propertychanged",
+        "Loxodon.Framework",
         "Tais.Extensions"
     ],
     "includePlatforms": [],
@@ -13,5 +14,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

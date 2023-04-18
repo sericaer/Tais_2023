@@ -32,12 +32,12 @@ namespace Tais.Scenes
             mainView.viewModel = new MainViewModel(session);
         }
 
-        void Update()
-        {
-            foreach (var prov in session.provinces.Items)
-            {
-                prov.popCount++;
-            }
-        }
+        //void Update()
+        //{
+        //    foreach (var prov in session.provinces.Items)
+        //    {
+        //        prov.popCount++;
+        //    }
+        //}
     }
 }

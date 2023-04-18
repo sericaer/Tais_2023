@@ -1,5 +1,5 @@
 using DynamicData;
-using System.Collections.ObjectModel;
+using Loxodon.Framework.Messaging;
 
 namespace Tais.Models
 {
@@ -10,6 +10,8 @@ namespace Tais.Models
 
         public Session()
         {
+            Entity.messenger = new Messenger();
+
             date = new Date();
             provinces = new SourceList<Province>();
 
