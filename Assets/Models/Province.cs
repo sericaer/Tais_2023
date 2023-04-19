@@ -28,7 +28,10 @@ namespace Tais.Models
             this.name = provinceInit.name;
             this.pops = new SourceList<Pop>();
 
-            pops.Sum(x => x.count).Subscribe(sum => popCount = (int)sum).AddTo(disposables);
+            pops.Sum(x => x.count).Subscribe(sum =>
+            {
+                popCount = (int)sum;
+            }).AddTo(disposables);
 
             pops.AddRange(provinceInit.popInits.Select(init => new Pop(init)));
 
