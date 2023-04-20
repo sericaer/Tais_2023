@@ -47,7 +47,7 @@ namespace Tais.Scenes
                 { 
                     dialogName = "mapDetailDialog", 
                     viewModel = new MapDetailDialogViewModel(model.provinces) 
-                });;
+                });
             });
         }
 

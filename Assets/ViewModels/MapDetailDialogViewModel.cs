@@ -6,39 +6,26 @@ using Tais.ViewModels.Interfaces;
 using System.Linq;
 using System.Reactive.Disposables;
 using System;
+using Tais.Extensions;
 
 namespace Tais.Scenes
 {
     internal class MapDetailDialogViewModel : ViewModelBase, IMapDetailDialogViewModel
     {
-        public ReadOnlyObservableCollection<IProvinceItemViewModel> provinceList { get; }
+        public ReadOnlyObservableCollection<IProvinceItemViewModel> provinceList => _provinceList;
 
-        private ObservableCollection<IProvinceItemViewModel> _provinceList;
+        private ReadOnlyObservableCollection<IProvinceItemViewModel> _provinceList;
 
-        private CompositeDisposable disposables;
+        private CompositeDisposable disposables = new CompositeDisposable();
 
         public MapDetailDialogViewModel(SourceList<Province> provinces)
         {
             disposables = new CompositeDisposable();
 
-            _provinceList = new ObservableCollection<IProvinceItemViewModel>();
-            provinceList = new ReadOnlyObservableCollection<IProvinceItemViewModel>(_provinceList);
-
-
-            disposables.Add(provinces.Connect().OnItemAdded(x =>
-            {
-                _provinceList.Add(new ProvinceItemViewModel(x));
-            }).Subscribe());
-
-            disposables.Add(provinces.Connect().OnItemAdded(x => 
-            {
-                var needRemove = _provinceList.SingleOrDefault(x => ((ProvinceItemViewModel)x).model == x);
-                if(needRemove != null)
-                {
-                    _provinceList.Remove(needRemove);
-                }
-
-            }).Subscribe());
+            provinces.Connect().Transform(p => new ProvinceItemViewModel(p) as IProvinceItemViewModel).Bind(out _provinceList)
+                .DisposeMany()
+                .Subscribe()
+                .AddTo(disposables);
         }
 
 

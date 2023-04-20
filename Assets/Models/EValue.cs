@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System;
 using System.Linq;
 using Tais.Extensions;
+using System.Reactive.Disposables;
 
 namespace Tais.Models
 {
@@ -34,14 +35,14 @@ namespace Tais.Models
 
         public Type recvEffectType { get; } = typeof(T);
 
-        private IDisposable disposable;
+        protected CompositeDisposable disposables = new CompositeDisposable();
 
         public EValue(double baseValue, EValueGroup group)
         {
             this.baseValue = baseValue;
             this.currValue = baseValue;
 
-            this.disposable = inputEffected.Connect().QueryWhenChanged().Subscribe(_ => UpdateCurrentValue());
+            inputEffected.Connect().QueryWhenChanged().Subscribe(_ => UpdateCurrentValue()).AddTo(disposables);
 
             group.Add(this);
         }
@@ -53,7 +54,7 @@ namespace Tais.Models
 
         public void Dispose()
         {
-            disposable.Dispose();
+            disposables.Dispose();
         }
     }
 }
