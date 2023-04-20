@@ -5,6 +5,7 @@ using Tais.ViewModels.Interfaces;
 using System;
 using System.Reactive.Disposables;
 using Loxodon.Framework.Commands;
+using Tais.Extensions;
 
 namespace Tais.Scenes
 {
@@ -18,8 +19,8 @@ namespace Tais.Scenes
 
         public ProvinceItemViewModel(Province province) : base(province)
         {
-            disposables.Add(model.WhenChanged(x => x.name).Subscribe(n => name = n));
-            disposables.Add(model.WhenChanged(x => x.popCount).Subscribe(n => popCount = n));
+            model.WhenChanged(x => x.name).Subscribe(n => name = n).AddTo(disposables);
+            model.WhenChanged(x => x.popCount).Subscribe(n => popCount = n).AddTo(disposables);
 
             OpenProvinceDetailDialog = new SimpleCommand(() => 
             {

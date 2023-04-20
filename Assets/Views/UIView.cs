@@ -10,12 +10,14 @@ using System.Reactive.Disposables;
 
 namespace Tais.Views
 {
-    public abstract class ViewBase : UIView
+    public abstract class BaseView : UIView
     {
+        public static IMessenger messenger { get; set; }
+
         public abstract IViewModel viewModel { get; set; }
     }
 
-    public abstract class UIView<TViewModel> : ViewBase
+    public abstract class UIView<TViewModel> : BaseView
         where TViewModel : class, IViewModel
     {
         public VariableArray variables;
@@ -47,18 +49,20 @@ namespace Tais.Views
         }
 
         private TViewModel _viewModel;
-        private CompositeDisposable disposables { get; } = new CompositeDisposable();
-        protected IMessenger messenger { get; } = Messenger.Default;
-
-        protected void SubscribeMessage<T>(Action<T> processer)
-        {
-            disposables.Add(messenger.Subscribe<T>(processer));
-        }
+        protected CompositeDisposable disposables { get; } = new CompositeDisposable();
 
         protected override void OnDestroy()
         {
             disposables.Dispose();
             _viewModel?.Dispose();
+        }
+    } 
+
+    public static class UIViewExtensions
+    {
+        public static void AddTo<T>(this ISubscription<T> disposable, CompositeDisposable disposables)
+        {
+            disposables.Add(disposable);
         }
     }
 }

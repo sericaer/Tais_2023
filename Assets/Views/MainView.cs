@@ -4,6 +4,7 @@ using Tais.ViewModels.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace Tais.Views
 {
     public class MainView : UIView<IMainViewModel>
@@ -25,13 +26,13 @@ namespace Tais.Views
 
             bindingSet.Build();
 
-            SubscribeMessage<MESSAGE_SHOW_DIALOG>(OnMessageShowDialog);
+            messenger.Subscribe<MESSAGE_SHOW_DIALOG>(OnMessageShowDialog).AddTo(disposables);
         }
 
         private void OnMessageShowDialog(MESSAGE_SHOW_DIALOG msg)
         {
             var dialogU = variables.Get(msg.dialogName);
-            var dialog = Instantiate(dialogU as ViewBase, dialogContainer);
+            var dialog = Instantiate(dialogU as BaseView, dialogContainer);
             dialog.viewModel = msg.viewModel;
 
             dialog.gameObject.SetActive(true);
