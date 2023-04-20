@@ -8,22 +8,16 @@ using Loxodon.Framework.Commands;
 
 namespace Tais.Scenes
 {
-    public class ProvinceItemViewModel : ViewModelBase, IProvinceItemViewModel
+    public class ProvinceItemViewModel : AbstractViewModel<Province>, IProvinceItemViewModel
     {
-        public Province model { get; }
-
         public string name { get; private set; }
 
         public int popCount { get; private set; }
 
         public ICommand OpenProvinceDetailDialog { get; private set; }
 
-        private CompositeDisposable disposables;
-
-        public ProvinceItemViewModel(Province model) : base(Loxodon.Framework.Messaging.Messenger.Default)
+        public ProvinceItemViewModel(Province province) : base(province)
         {
-            disposables = new CompositeDisposable();
-
             disposables.Add(model.WhenChanged(x => x.name).Subscribe(n => name = n));
             disposables.Add(model.WhenChanged(x => x.popCount).Subscribe(n => popCount = n));
 
@@ -35,12 +29,6 @@ namespace Tais.Scenes
                     viewModel = new ProvinceDetailDialogViewModel(model)
                 });
             });
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            disposables.Dispose();
         }
     }
 }

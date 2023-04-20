@@ -10,29 +10,17 @@ using Tais.Extensions;
 
 namespace Tais.Scenes
 {
-    internal class MapDetailDialogViewModel : ViewModelBase, IMapDetailDialogViewModel
+    internal class MapDetailDialogViewModel : AbstractViewModel<SourceList<Province>>, IMapDetailDialogViewModel
     {
         public ReadOnlyObservableCollection<IProvinceItemViewModel> provinceList => _provinceList;
-
         private ReadOnlyObservableCollection<IProvinceItemViewModel> _provinceList;
 
-        private CompositeDisposable disposables = new CompositeDisposable();
-
-        public MapDetailDialogViewModel(SourceList<Province> provinces)
+        public MapDetailDialogViewModel(SourceList<Province> provinces) : base(provinces)
         {
-            disposables = new CompositeDisposable();
-
-            provinces.Connect().Transform(p => new ProvinceItemViewModel(p) as IProvinceItemViewModel).Bind(out _provinceList)
+            model.Connect().Transform(p => new ProvinceItemViewModel(p) as IProvinceItemViewModel).Bind(out _provinceList)
                 .DisposeMany()
                 .Subscribe()
                 .AddTo(disposables);
-        }
-
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            disposables.Dispose();
         }
     }
 }

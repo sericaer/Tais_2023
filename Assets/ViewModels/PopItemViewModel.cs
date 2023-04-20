@@ -9,7 +9,7 @@ using Loxodon.Framework.Commands;
 
 namespace Tais.Scenes
 {
-    public class PopItemViewModel : ViewModelBase, IPopItemViewModel
+    public class PopItemViewModel : AbstractViewModel<Pop>, IPopItemViewModel
     {
         public string type { get; private set; }
 
@@ -17,13 +17,9 @@ namespace Tais.Scenes
 
         public ICommand OpenPopDetailDialog { get; }
 
-        private CompositeDisposable disposables = new CompositeDisposable();
-        private Pop model;
 
-        public PopItemViewModel(Pop model) : base(Loxodon.Framework.Messaging.Messenger.Default)
+        public PopItemViewModel(Pop pop) : base(pop)
         {
-            this.model = model;
-
             model.WhenValueChanged(x => x.name).Subscribe(n => type = n).AddTo(disposables);
             model.WhenValueChanged(x => x.count).Subscribe(n => num = ((int)n).ToString()).AddTo(disposables);
 
@@ -35,13 +31,6 @@ namespace Tais.Scenes
                     viewModel = new PopDetailDialogViewModel(model)
                 });
             });
-        }
-
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            disposables.Dispose();
         }
     }
 }
