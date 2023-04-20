@@ -1,4 +1,5 @@
-﻿using Loxodon.Framework.ViewModels;
+﻿using Loxodon.Framework.Commands;
+using Loxodon.Framework.ViewModels;
 using System.ComponentModel;
 
 namespace Tais.ViewModels.Interfaces
@@ -7,5 +8,7 @@ namespace Tais.ViewModels.Interfaces
     {
         string type { get; }
         string num { get; }
+
+        ICommand OpenPopDetailDialog { get; }
     }
 }

@@ -11,7 +11,7 @@ namespace Tais.Views
             var bindingSet = this.CreateBindingSet<PopItemView, IPopItemViewModel>();
             bindingSet.Bind(variables.Get<Text>("type")).For(v => v.text).To(vm => vm.type).OneWay();
             bindingSet.Bind(variables.Get<Text>("num")).For(v => v.text).To(vm => vm.num).OneWay();
-            //bindingSet.Bind(variables.Get<Button>("showProvinceDetail")).For(v => v.onClick).To(vm => vm.OpenProvinceDetailDialog);
+            bindingSet.Bind(variables.Get<Button>("showPopDetail")).For(v => v.onClick).To(vm => vm.OpenPopDetailDialog);
             bindingSet.Build();
         }
     }
