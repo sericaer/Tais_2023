@@ -9,5 +9,6 @@ namespace Tais.ViewModels.Interfaces
         string num { get;}
         string numInc { get;}
         string living { get; }
+        string tax { get; }
     }
 }

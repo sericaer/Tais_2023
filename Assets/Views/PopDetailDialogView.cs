@@ -14,6 +14,7 @@ namespace Tais.Views
             bindingSet.Bind(variables.Get<Text>("num")).For(v => v.text).To(vm => vm.num).OneWay();
             bindingSet.Bind(variables.Get<Text>("living")).For(v => v.text).To(vm => vm.living).OneWay();
             bindingSet.Bind(variables.Get<Text>("numInc")).For(v => v.text).To(vm => vm.numInc).OneWay();
+            bindingSet.Bind(variables.Get<Text>("tax")).For(v => v.text).To(vm => vm.tax).OneWay();
             bindingSet.Build();
         }
     }

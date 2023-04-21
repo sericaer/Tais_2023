@@ -23,7 +23,8 @@ namespace Tais.Models
 
         public NumInc numInc { get; }
         public Living living { get; }
-
+        public Tax tax { get; }
+        
         private EValueGroup eValueGroup { get; }
 
 
@@ -37,6 +38,14 @@ namespace Tais.Models
 
             numInc = new NumInc(0.001, eValueGroup);
             living = new Living(100, eValueGroup);
+            tax = new Tax(CalcTaxBase(), eValueGroup);
+
+            this.WhenValueChanged(x => x.count).Subscribe(_ => tax.baseValue = CalcTaxBase()).AddTo(disposables);
+        }
+
+        private double CalcTaxBase()
+        {
+            return count * 0.001;
         }
 
         [MessageProcesser]
@@ -44,5 +53,20 @@ namespace Tais.Models
         {
             count += count * numInc.currValue;
         }
+    }
+
+    public class Tax :EValue<PopTaxEffect>
+    {
+        public Tax(double baseValue, EValueGroup eValueGroup) : base(baseValue, eValueGroup)
+        {
+
+        }
+    }
+
+    public class PopTaxEffect : IEffect
+    {
+        public string desc => throw new NotImplementedException();
+
+        public double value => throw new NotImplementedException();
     }
 }

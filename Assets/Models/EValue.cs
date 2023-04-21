@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using Tais.Extensions;
 using System.Reactive.Disposables;
+using DynamicData.Binding;
 
 namespace Tais.Models
 {
@@ -25,7 +26,7 @@ namespace Tais.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public double baseValue { get; }
+        public double baseValue { get; set; }
         public double currValue { get; private set; }
         public string desc { get; }
 
@@ -43,6 +44,7 @@ namespace Tais.Models
             this.currValue = baseValue;
 
             inputEffected.Connect().QueryWhenChanged().Subscribe(_ => UpdateCurrentValue()).AddTo(disposables);
+            this.WhenValueChanged(x => x.baseValue).Subscribe(_ => UpdateCurrentValue()).AddTo(disposables);
 
             group.Add(this);
         }
