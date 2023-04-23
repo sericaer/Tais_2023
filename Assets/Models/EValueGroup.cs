@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using Tais.Extensions;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 
 namespace Tais.Models
 {
@@ -12,25 +13,28 @@ namespace Tais.Models
 
         private CompositeDisposable disposables = new CompositeDisposable();
 
+
+        private SourceList<IEValue> sourceList = new SourceList<IEValue>();
+        private IObservableList<IEffect> effectPool;
+
+        public EValueGroup(SourceList<IEffect> extEffects)
+        {
+            effectPool = Observable.Merge(extEffects.Connect(), 
+                sourceList.Connect().MergeMany(x => x.ouputEffect.Connect())).AsObservableList();
+        }
+
         public void Add(IEValue eValue)
         {
-            eValue.AddTo(disposables);
+            sourceList.Add(eValue);
 
-            eValue.ouputEffect.Connect().OnItemAdded(effect =>
+            effectPool.Connect().OnItemAdded(item =>
             {
-                if (dict.TryGetValue(effect.GetType(), out IEValue recv))
-                {
-                    recv.inputEffected.Remove(effect);
-                }
+                dict[item.GetType()].inputEffected.Add(item);
             }).Subscribe().AddTo(disposables);
 
-            eValue.ouputEffect.Connect().OnItemRemoved(effect =>
+            effectPool.Connect().OnItemRemoved(item =>
             {
-                if (dict.TryGetValue(effect.GetType(), out IEValue recv))
-                {
-                    recv.inputEffected.Add(effect);
-                }
-
+                dict[item.GetType()].inputEffected.Remove(item);
             }).Subscribe().AddTo(disposables);
 
             dict.Add(eValue.recvEffectType, eValue);

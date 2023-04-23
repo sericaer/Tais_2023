@@ -17,4 +17,11 @@
         public string desc { get; }
         public double value { get; }
     }
+
+    public class PopTaxEffect : IEffect
+    {
+        public string desc { get; }
+
+        public double value { get; }
+    }
 }

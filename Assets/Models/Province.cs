@@ -22,6 +22,7 @@ namespace Tais.Models
 
         public SourceList<Pop> pops { get; }
 
+        public PopTaxLevel popTaxLevel { get; }
 
         public Province(ProvinceInit provinceInit)
         {
@@ -33,8 +34,21 @@ namespace Tais.Models
                 popCount = (int)sum;
             }).AddTo(disposables);
 
-            pops.AddRange(provinceInit.popInits.Select(init => new Pop(init)));
+            pops.AddRange(provinceInit.popInits.Select(init => new Pop(init, popTaxLevel.ouputEffect)));
+
 
         }
+
+        public class PopTaxLevel
+        {
+            public int levelCount { get; }
+            public SourceList<IEffect> ouputEffect { get; } = new SourceList<IEffect>();
+        }
+    }
+
+    interface ICache
+    {
+        protected object objValue { get; }
+        bool isDirty { get; }
     }
 }

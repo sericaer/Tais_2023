@@ -27,13 +27,12 @@ namespace Tais.Models
         
         private EValueGroup eValueGroup { get; }
 
-
-        public Pop(PopInit init)
+        public Pop(PopInit init, SourceList<IEffect> effectsFromProvince)
         {
             this.name = init.type;
             this.count = init.count;
 
-            eValueGroup = new EValueGroup();
+            eValueGroup = new EValueGroup(effectsFromProvince);
             eValueGroup.AddTo(disposables);
 
             numInc = new NumInc(0.001, eValueGroup);
@@ -53,20 +52,5 @@ namespace Tais.Models
         {
             count += count * numInc.currValue;
         }
-    }
-
-    public class Tax :EValue<PopTaxEffect>
-    {
-        public Tax(double baseValue, EValueGroup eValueGroup) : base(baseValue, eValueGroup)
-        {
-
-        }
-    }
-
-    public class PopTaxEffect : IEffect
-    {
-        public string desc => throw new NotImplementedException();
-
-        public double value => throw new NotImplementedException();
     }
 }
